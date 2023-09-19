@@ -7,10 +7,6 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
-// template_qe55pva
-// service_mvxpgsn
-// Tf6Utke54AFEH7h2N
-
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -35,24 +31,18 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-
-    // template_qe55pva
-// service_mvxpgsn
-// Tf6Utke54AFEH7h2N
-
-
     emailjs
       .send(
-        'service_mvxpgsn',
-        'template_qe55pva',
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "Ntuthuko Smith",
+          to_name: "JavaScript Mastery",
           from_email: form.email,
-          to_email: "ntuthukosmithsa@outlook.com",
+          to_email: "sujata@jsmastery.pro",
           message: form.message,
         },
-        'Tf6Utke54AFEH7h2N'
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
